@@ -1,0 +1,261 @@
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+
+@mixin respond-to($media) {
+    @if $media == mobile {
+      @media only screen and (max-width: 375px) { @content; }
+    }
+    @else if $media == wide-mobile {
+      @media only screen and (min-width: 376px) and (max-width: 767px) { @content; }
+    }
+    @else if $media == tablets {
+      @media only screen and (min-width: 768px) and (max-width: 1023px) { @content; }
+    }
+    @else if $media == laptop {
+        @media only screen and (min-width: 1024px) and (max-width: 1439px) { @content; }
+      }
+    @else if $media == wide-laptop {
+        @media only screen and (min-width: 1440px)  { @content; }
+      }
+}
+
+@mixin justify-content($property) {
+  -webkit-justify-content: $property;
+  -moz-justify-content: $property;
+  -ms-justify-content: $property;
+  justify-content: $property;
+}
+@mixin align-items($property) {
+  -webkit-align-items: $property;
+  -moz-align-items: $property;
+  -ms-align-items: $property;
+  align-items: $property;
+}
+@mixin flex-direction($property) {
+  -webkit-flex-direction: $property;
+  -moz-flex-direction: $property;
+  -ms-flex-direction: $property;
+  flex-direction: $property;
+}
+@font-face {
+    font-family: 'Dosis';
+    src: url("../fonts/Dosis-VariableFont_wght.ttf")
+}
+@font-face {
+  font-family: 'Dosis Light';
+  src: url("../fonts/Dosis-VariableLightFont_wght.ttf")
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/OpenSans-Light.ttf")
+}
+@font-face {
+    font-family: 'Freehand';
+    src: url("../fonts/FREEHAND.TTF")
+}
+
+$main-color: #45b887;
+$main-font: 'Dosis';
+$light-font: 'Dosis Light';
+$paragraph-font: 'Open Sans';
+$paragraph-size: 16px;
+$logo-font: 36px;
+$light-color: #ffffff;
+
+* {
+    box-sizing: border-box;
+}
+.header{
+  &-background{
+    position: absolute;
+    z-index: 1;
+    top: -10%;
+    max-width: 100%;
+  }
+    // background-image: url('../img/bg.png');
+    &_menu{
+      display: -webkit-flex; 
+      display: -ms-flexbox; 
+      display: -moz-flex;
+      display: flex;
+      position: relative;
+      z-index: 10;
+      @include justify-content(center);
+      background-color: $main-color;
+      &-logo{
+        display: -webkit-flex; 
+        display: -ms-flexbox; 
+        display: -moz-flex;
+        display: flex;
+        @include align-items(center);
+        &-item{
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 3px solid $light-color;
+        }
+        &-item img{
+          width: 25px;
+          padding: 6px;
+        }
+      }
+      &-title{
+        font-family: $main-font;
+        font-size: $logo-font;
+        color: $light-color;
+        text-transform: uppercase;
+        margin-left: 20px;
+      }
+      &-navigation{
+        display: -webkit-flex; 
+        display: -ms-flexbox; 
+        display: -moz-flex;
+        display: flex;
+        list-style-type: none;
+        
+      }
+      &-navigation a{
+        color: $light-color;
+        text-decoration: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding:  10px;
+        font-size: $paragraph-size;
+        font-family: $main-font;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      &-navigation li{
+        display: -webkit-flex; 
+        display: -ms-flexbox; 
+        display: -moz-flex;
+        display: flex;
+        @include align-items(center);
+      }
+      .logo-item{
+        border: 2px solid $light-color;
+        border-radius: 50%;
+        width: 17px;
+        height: 15px;
+      }
+      .logo-item img{
+        width: 13px;
+        padding: 3px;
+      }
+    }
+    &_title{
+      text-align: center;
+      text-transform: uppercase;
+      color: $light-color;
+      font-family: $main-font;
+      font-size: 48px;
+      padding-top: 50px;
+      position: relative;
+      z-index: 10;
+  }
+  &_image-container{
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: -moz-flex;
+    display: flex;
+    @include justify-content(space-between);
+    position: relative;
+    z-index: 10;
+  }
+  .first-block img{
+    position: relative;
+    &:first-child{
+      left: 450px;
+      top: 5px;
+    }
+    &:nth-child(2){
+      left: 280px;
+      top: 45px;
+    }
+    &:last-child{
+      left: 300px;
+      top: 100px;
+    }
+  }
+  .second-block img{
+    position: relative;
+    &:first-child{
+      right: 350px;
+      top: 5px;
+    }
+    &:nth-child(2){
+      right: 350px;
+      top: 60px;
+    }
+    &:last-child{
+      right: 430px;
+      top: 130px;
+    }
+  }
+}
+.dots{
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: -moz-flex;
+    display: flex;
+    @include justify-content(center);
+}
+.dots img{
+  padding: 10px;
+}
+.main{
+  margin-top: 180px;
+  &-content{
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: -moz-flex;
+    display: flex; 
+    @include align-items(center);
+    @include justify-content(center);
+    &_images-lamp img{
+      position: relative;
+      &:first-child{
+        top: 90px;
+        left: 190px;
+      }
+      &:nth-child(2){
+        top: -15px;
+        left: 0;
+      }
+      &:nth-child(3){
+        top: -45px;
+        left: 150px;
+      }
+      &:nth-child(4){
+        top: 120px;
+        left: 120px;  
+      }
+      &:last-child{
+        top: 90px;
+        left: -170px;
+      }
+    }
+    &_images-lamp{
+      margin-left: -250px;
+    }
+    &_first-paragraph{
+      position: relative;
+      left: 10%;
+    }
+    &_second-paragraph{
+      position: relative;
+      left: 70px;
+    }
+    &_title{
+      font-family: $light-font;
+      font-weight: 100;
+      text-transform: uppercase;
+      font-size: 40px;
+    }
+    &_text{
+      font-family: $paragraph-font;
+      font-size: $paragraph-size;
+      line-height: 1.5;
+    }
+  }
+}

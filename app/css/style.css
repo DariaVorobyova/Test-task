@@ -1,0 +1,273 @@
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+@font-face {
+  font-family: 'Dosis';
+  src: url("../fonts/Dosis-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: 'Dosis Light';
+  src: url("../fonts/Dosis-VariableLightFont_wght.ttf");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Freehand';
+  src: url("../fonts/FREEHAND.TTF");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header-background {
+  position: absolute;
+  z-index: 1;
+  top: -10%;
+  max-width: 100%;
+}
+
+.header_menu {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: flex;
+  position: relative;
+  z-index: 10;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  background-color: #45b887;
+}
+
+.header_menu-logo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.header_menu-logo-item {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+
+.header_menu-logo-item img {
+  width: 25px;
+  padding: 6px;
+}
+
+.header_menu-title {
+  font-family: "Dosis";
+  font-size: 36px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.header_menu-navigation {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: flex;
+  list-style-type: none;
+}
+
+.header_menu-navigation a {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Dosis";
+}
+
+.header_menu-navigation a:hover {
+  text-decoration: underline;
+}
+
+.header_menu-navigation li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.header_menu .logo-item {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 17px;
+  height: 15px;
+}
+
+.header_menu .logo-item img {
+  width: 13px;
+  padding: 3px;
+}
+
+.header_title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Dosis";
+  font-size: 48px;
+  padding-top: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+.header_image-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+.header .first-block img {
+  position: relative;
+}
+
+.header .first-block img:first-child {
+  left: 450px;
+  top: 5px;
+}
+
+.header .first-block img:nth-child(2) {
+  left: 280px;
+  top: 45px;
+}
+
+.header .first-block img:last-child {
+  left: 300px;
+  top: 100px;
+}
+
+.header .second-block img {
+  position: relative;
+}
+
+.header .second-block img:first-child {
+  right: 350px;
+  top: 5px;
+}
+
+.header .second-block img:nth-child(2) {
+  right: 350px;
+  top: 60px;
+}
+
+.header .second-block img:last-child {
+  right: 430px;
+  top: 130px;
+}
+
+.dots {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+}
+
+.dots img {
+  padding: 10px;
+}
+
+.main {
+  margin-top: 180px;
+}
+
+.main-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+}
+
+.main-content_images-lamp img {
+  position: relative;
+}
+
+.main-content_images-lamp img:first-child {
+  top: 90px;
+  left: 190px;
+}
+
+.main-content_images-lamp img:nth-child(2) {
+  top: -15px;
+  left: 0;
+}
+
+.main-content_images-lamp img:nth-child(3) {
+  top: -45px;
+  left: 150px;
+}
+
+.main-content_images-lamp img:nth-child(4) {
+  top: 120px;
+  left: 120px;
+}
+
+.main-content_images-lamp img:last-child {
+  top: 90px;
+  left: -170px;
+}
+
+.main-content_images-lamp {
+  margin-left: -250px;
+}
+
+.main-content_first-paragraph {
+  position: relative;
+  left: 10%;
+}
+
+.main-content_second-paragraph {
+  position: relative;
+  left: 70px;
+}
+
+.main-content_title {
+  font-family: "Dosis Light";
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.main-content_text {
+  font-family: "Open Sans";
+  font-size: 16px;
+  line-height: 1.5;
+}
