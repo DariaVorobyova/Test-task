@@ -1,4 +1,4 @@
-@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+@import "https://necolas.github.io/normalize.css/";
 
 @mixin respond-to($media) {
     @if $media == mobile {
@@ -36,6 +36,18 @@
   -ms-flex-direction: $property;
   flex-direction: $property;
 }
+@mixin flex-wrap($property) {
+  -webkit-flex-wrap: $property;
+  -moz-flex-wrap: $property;
+  -ms-flex-wrap: $property;
+  flex-wrap: $property;
+}
+@mixin border-radius($property) {
+  -webkit-border-radius: $property;
+  -moz-border-radius: $property;
+  -ms-border-radius: $property;
+  border-radius: $property;
+}
 @font-face {
     font-family: 'Dosis';
     src: url("../fonts/Dosis-VariableFont_wght.ttf")
@@ -49,20 +61,30 @@
     src: url("../fonts/OpenSans-Light.ttf")
 }
 @font-face {
+  font-family: 'Open Sans Italic';
+  src: url("../fonts/OpenSans-Italic.ttf")
+}
+@font-face {
     font-family: 'Freehand';
-    src: url("../fonts/FREEHAND.TTF")
+    src: url("../fonts/18805.ttf")
 }
 
 $main-color: #45b887;
 $main-font: 'Dosis';
 $light-font: 'Dosis Light';
+$theme-font: 'Freehand';
 $paragraph-font: 'Open Sans';
+$italic-font: 'Open Sans Italic';
 $paragraph-size: 16px;
 $logo-font: 36px;
 $light-color: #ffffff;
+$dark-color: #282828;
 
 * {
     box-sizing: border-box;
+}
+body{
+  margin: 0;
 }
 .header{
   &-background{
@@ -71,7 +93,6 @@ $light-color: #ffffff;
     top: -10%;
     max-width: 100%;
   }
-    // background-image: url('../img/bg.png');
     &_menu{
       display: -webkit-flex; 
       display: -ms-flexbox; 
@@ -90,7 +111,7 @@ $light-color: #ffffff;
         &-item{
           width: 30px;
           height: 30px;
-          border-radius: 50%;
+          @include border-radius(50%);
           border: 3px solid $light-color;
         }
         &-item img{
@@ -134,7 +155,7 @@ $light-color: #ffffff;
       }
       .logo-item{
         border: 2px solid $light-color;
-        border-radius: 50%;
+        @include border-radius(50%);
         width: 17px;
         height: 15px;
       }
@@ -149,7 +170,7 @@ $light-color: #ffffff;
       color: $light-color;
       font-family: $main-font;
       font-size: 48px;
-      padding-top: 50px;
+      padding-top: 40px;
       position: relative;
       z-index: 10;
   }
@@ -166,30 +187,30 @@ $light-color: #ffffff;
     position: relative;
     &:first-child{
       left: 450px;
-      top: 5px;
+      top: 0;
     }
     &:nth-child(2){
       left: 280px;
-      top: 45px;
+      top: 35px;
     }
     &:last-child{
       left: 300px;
-      top: 100px;
+      top: 90px;
     }
   }
   .second-block img{
     position: relative;
     &:first-child{
       right: 350px;
-      top: 5px;
+      top: 0;
     }
     &:nth-child(2){
       right: 350px;
-      top: 60px;
+      top: 50px;
     }
     &:last-child{
       right: 430px;
-      top: 130px;
+      top: 120px;
     }
   }
 }
@@ -210,6 +231,7 @@ $light-color: #ffffff;
     display: -ms-flexbox; 
     display: -moz-flex;
     display: flex; 
+    margin-top: 50px;
     @include align-items(center);
     @include justify-content(center);
     &_images-lamp img{
@@ -237,6 +259,7 @@ $light-color: #ffffff;
     }
     &_images-lamp{
       margin-left: -250px;
+      margin-top: -100px;
     }
     &_first-paragraph{
       position: relative;
@@ -244,7 +267,6 @@ $light-color: #ffffff;
     }
     &_second-paragraph{
       position: relative;
-      left: 70px;
     }
     &_title{
       font-family: $light-font;
@@ -257,5 +279,296 @@ $light-color: #ffffff;
       font-size: $paragraph-size;
       line-height: 1.5;
     }
+    &_button{
+      outline: none;
+      width: 144px;
+      height: 40px;
+      cursor: pointer;
+      background-color: $light-color;
+      color: $dark-color;
+      border: 1px solid $dark-color;
+      @include border-radius(10px);
+      font-family: $main-font;
+      font-size: $paragraph-size;
+      text-transform: uppercase;
+      &:hover{
+        color: $light-color;
+        border: 1px solid $light-color;
+        background-color: $dark-color;
+      }
+    }
+    &_images-fire img{
+      position: relative;
+      &:first-child{
+        left: 390px;
+        bottom: 100px;
+      }
+      &:nth-child(2){
+        top: 20px;
+        left: 120px;
+      }
+      &:nth-child(3){
+        left: 90px;
+        bottom: 60px;
+      }
+      &:nth-child(4){
+        bottom: 120px;
+        left: 160px;
+      }
+      &:nth-child(5){
+        top: 80px;
+        left: 40px;
+      }
+      &:nth-child(6){
+        left: 200px;
+      }
+      &:last-child{
+        top: 30px;
+        right: 10px;
+      }
+    }
+  }
+  &_statistics-container{ 
+    background-color: $main-color;
+    color:$light-color;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  &_statistics-title{
+    font-family: $theme-font;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 48px;
+    margin: 0;
+  }
+  &_statistics-block{
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: -moz-flex;
+    display: flex;
+    @include align-items(center);
+    @include justify-content(center);
+    font-family: $main-font;
+    margin-top: 30px;
+    & h4{
+      font-size: 60px;
+      margin: 20px;
+      font-weight: 100;
+    }
+    & p{
+      font-size: 24px;
+      font-weight: 100;
+    }
+  }
+  .mark-logo{
+    width: 20px;
+    height: 20px;
+    @include border-radius(50%);
+    border: 3px solid $light-color;
+    margin-left: 20px;
+    & img{
+      width: 15px;
+      padding: 3px;
+    }
+  }
+  &_partnership{
+    margin: 0 300px;
+    &-top{
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: -moz-flex;
+    display: flex; 
+    @include justify-content(space-between);
+    @include align-items(center);
+    }
+    &-title{
+      font-family: $main-font;
+      font-size: 36px;
+      text-transform: uppercase;
+      font-weight: 100;
+      margin-bottom: 0;
+    }
+    &-subtitle{
+      font-family: $italic-font;
+      color: #c9c9c9;
+      font-size: 12px;
+    }
+    &-gallery{
+      display: -webkit-flex; 
+      display: -ms-flexbox; 
+      display: -moz-flex;
+      display: flex; 
+      @include flex-wrap(wrap);
+      &-item{
+        width: 33.3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:nth-child(2){
+          background-color: rgb(250, 250, 250);
+        }
+        & img{
+          padding: 50px;
+        }
+      }
+    }
+  }
+  .arrows-block button{
+    background-color: $light-color;
+    border: 1px solid $dark-color;
+    @include border-radius(10px);
+    width: 35px;
+    height: 35px;
+    margin: 0 7px;
+    cursor: pointer;
+    outline: none;
+  }
+  &_projects{
+    margin: 80px 300px;
+    &-heading{
+      @extend .main_partnership-top;
+      margin-top: 0;
+      & h3{
+        @extend .main_partnership-title;
+        margin-bottom: 40px!important;
+      }
+    }
+    .buttons-container button{
+      background-color: $light-color;
+      border: 1px solid $dark-color;
+      @include border-radius(10px);
+      width: 60px;
+      height: 30px;
+      margin: 0 7px;
+      cursor: pointer;
+      outline: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: $main-font;
+      &:hover{
+        background-color: $dark-color;
+        color: $light-color;
+        border: 1px solid $light-color;
+      }
+    }
+    &-gallery{
+      display: -webkit-flex; 
+      display: -ms-flexbox; 
+      display: -moz-flex;
+      display: flex; 
+      @include flex-wrap(wrap);
+      & img{
+        width: 240px;
+        height: 220px;
+        margin: 15px;;
+      }
+    }
+    &-button{
+      margin: 0 auto;
+      display: block;
+      width: 170px;
+      height: 40px;
+      @include border-radius(10px);
+      text-transform: uppercase;
+      font-family: $main-font;
+      font-size: $paragraph-size;
+      border: 1px solid $dark-color;
+      background-color: $light-color;
+      color: $dark-color;
+      margin-top:  15px;
+      outline: none;
+      cursor: pointer;
+      &:hover{
+        background-color: $dark-color;
+        color: $light-color;
+        border: 1px solid $light-color;
+      }
+    }
+  }
+}
+.footer{
+  margin: 0 300px;
+  .contact-form{
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: -moz-flex;
+    display: flex; 
+    @include justify-content(space-between);
+    @include align-items(center);
+    & h3{
+      font-size: $logo-font;
+      font-family: $main-font;
+      text-transform: uppercase;
+      margin: 10px;
+    }
+    & p{
+      font-size: 14px;
+      font-family: $paragraph-font;
+    }
+    &_info{
+      & h4{
+        font-family: $main-font;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      & a{
+        text-decoration: none;
+        color: $dark-color;
+        font-family: $paragraph-font;
+        font-size: 24px;
+      }
+    }
+    &_logo{
+      display: flex;
+      @include align-items(center);
+      &-item{
+      @include border-radius(50%);
+      border: 2px solid $dark-color;
+      width: 25px;
+      height: 25px;
+      & img{
+        padding: 7px;
+      }
+      }
+  }
+  }
+  .social-networks{
+      display: -webkit-flex; 
+      display: -ms-flexbox; 
+      display: -moz-flex;
+      display: flex; 
+      @include justify-content(space-between);
+      @include align-items(center);
+      & a{
+        text-decoration: none;
+      }
+  }
+
+  .date-container{
+    display: -webkit-flex; 
+    display: -ms-flexbox; 
+    display: -moz-flex;
+    display: flex; 
+    @include align-items(center);
+  }
+  &_logo{
+    @include border-radius(50%);
+      border: 2px solid $dark-color;
+      width: 15px;
+      height: 15px;
+      margin: 0 5px;
+      & img{
+        padding: 2px;
+      }
+  }
+
+  .anchor{
+    text-decoration: none;
+    color: $dark-color;
+    font-size: 14px;
+    font-family: $main-font;
+    text-transform: uppercase;
   }
 }
