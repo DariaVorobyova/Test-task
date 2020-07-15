@@ -93,10 +93,10 @@ body{
     top: -10%;
     max-width: 100%;
     @include respond-to(mobile) {
-      top: 0;
+      top: 80px;
    }
     @include respond-to(wide-mobile) {
-      top: 0;
+      top: 45px;
    }
   }
     &_menu{
@@ -230,10 +230,12 @@ body{
       position: relative;
       z-index: 10;
       @include respond-to(mobile) {
-        display: none;
+        font-size: 18px;
+        padding-top: 0;
      }
       @include respond-to(wide-mobile) {
-        display: none;
+        font-size: 20px;
+        padding-top: 0;
      }
       @include respond-to(laptop) {
         font-size: $logo-font;
@@ -373,10 +375,10 @@ body{
 .main{
   margin-top: 180px;
   @include respond-to(mobile) {
-    margin-top: 70px;
+    margin-top: 60px;
  }
  @include respond-to(wide-mobile) {
-  margin-top: 80px;
+  margin-top: 60px;
 }
   @include respond-to(tablets) {
     margin-top: 90px;
@@ -463,19 +465,23 @@ body{
       position: relative;
       left: 10%;
       @include respond-to(mobile) {
-        left: 2%
+        position: static;
+        margin: 0 20px;
      }
      @include respond-to(wide-mobile) {
-      left: 2%
+        position: static;
+        margin: 0 20px;
    }
     }
     &_second-paragraph{
       position: relative;
       @include respond-to(mobile) {
-        left: 2%
+        position: static;
+        margin: 0 20px;
      }
      @include respond-to(wide-mobile) {
-         left: 2%
+       position: static;
+       margin: 0 20px;
    }
     }
     &_title{
@@ -483,6 +489,12 @@ body{
       font-weight: 100;
       text-transform: uppercase;
       font-size: 40px;
+      @include respond-to(mobile) {
+        font-size: 24px;
+     }
+     @include respond-to(wide-mobile) {
+      font-size: 24px;
+   }
       @include respond-to(tablets) {
         font-size: 30px;
      }
@@ -491,6 +503,12 @@ body{
       font-family: $paragraph-font;
       font-size: $paragraph-size;
       line-height: 1.5;
+      @include respond-to(mobile) {
+        font-size: 14px;
+     }
+     @include respond-to(wide-mobile) {
+       font-size: 14px;
+   }
     }
     &_button{
       outline: none;
@@ -728,6 +746,7 @@ body{
       @include flex-wrap(wrap);
       &-item{
         width: 33.3%;
+        height: 230px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -744,15 +763,15 @@ body{
         &:nth-child(2){
           background-color: rgb(250, 250, 250);
         }
-        & img{
-          padding: 50px;
-          @include respond-to(tablets) {
-            padding: 30px;
-         }
-          @include respond-to(laptop) {
-            padding: 30px;
-         }
-        }
+        // & img{
+        //   padding: 50px;
+        //   @include respond-to(tablets) {
+        //     padding: 30px;
+        //  }
+        //   @include respond-to(laptop) {
+        //     padding: 30px;
+        //  }
+        // }
       }
     }
   }
@@ -840,7 +859,7 @@ body{
         width: 30px;
         height: 25px;
         margin: 0 5px;
-        font-size: 12px;
+        font-size: 10px;
      }
       @include respond-to(laptop) {
         width: 40px;
@@ -859,6 +878,9 @@ body{
       display: -moz-flex;
       display: flex; 
       @include flex-wrap(wrap);
+      & div{
+        margin: 0 auto;
+      }
       & img{
         width: 240px;
         height: 220px;
@@ -961,6 +983,12 @@ body{
         color: $dark-color;
         font-family: $paragraph-font;
         font-size: 24px;
+        @include respond-to(mobile) {
+          font-size: 18px
+       }
+       @include respond-to(wide-mobile) {
+        font-size: 18px
+     }
         @include respond-to(tablets) {
           font-size: $paragraph-size;
        }
